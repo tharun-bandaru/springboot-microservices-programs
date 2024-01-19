@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<table border="1">
+		<tr>
+			<th>empno</th>
+			<th>ename</th>
+			<th>sal</th>
+			<th>deptno</th>
+		</tr>
+		<tr th:each="emp:${employees}">
+			<td th:text="${emp.empno}"></td>
+			<td th:text="${emp.ename}"></td>
+			<td th:text="${emp.sal}"></td>
+			<td th:text="${emp.deptno}"></td>
+		</tr>
+	</table>
+
+
+	<a th:if="${previous}"
+		th:href="@{'pagination?pageIndex='+ ${currentPage-1}}">Previous</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a th:if="${next}"
+		th:href="@{'pagination?pageIndex='+${currentPage+1}}">Next</a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!Doctype HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+span{
+ color:red;
+ 
+}
+table,td,tr{
+ margin-left:auto;
+ margin-right:auto;
+}
+</style>
+</head>
+<body>
+	<form method="post" th:action="@{/register/save}" th:object="${customer}">
+		<table>
+			<tr>
+				<td>CustomerName : </td> 
+				<td> <input type="text" name="customerName" th:field="*{customerName}"> </td>
+				<td> <span th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></span> </td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password" th:field="*{password}" /></td>
+				<td><span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="emali" th:field="*{email}" /></td>
+				<td><span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></td>
+			</tr>
+			<tr>
+				<td>Contact:</td>
+				<td><input type="text" name="contact" th:field="*{contact}" /></td>
+				<td><span th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}"></span></td>
+			</tr>
+			<tr>
+				<td>Date Of Birth:</td>
+				<td><input type="date" name="date" th:field="*{dateOfBirth}" /></td>
+				<td><span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span></td>
+			</tr>
+		</table>
+		<input type="submit" value="submit"/>
+	</form>
+</body>
+
+</html>

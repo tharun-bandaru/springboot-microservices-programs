@@ -1,0 +1,40 @@
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<form method="post" th:action="@{/auth}" th:object="${userLogin}">
+			<table>
+				<tr>
+					<td>Username</td>
+					<td> <input type="text" name="userName" th:field="*{userName}"></td>
+					<td> <font color="red"><span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span></font></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td> <input type="password" name="password" th:field="*{password}"></td>
+					<td><font color="red"> <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span> </font></td>
+				</tr>
+			</table>
+			<input type="submit"  value="submit">
+		</form>
+	</body>
+</html> -->
+ 
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<body>
+	<form method="post" th:action="@{/auth}" th:object="${userLogin}">
+		<table>
+			<tr>
+				<td>User name</td>
+				<td><input type="text" name="userName" th:field="*{userName}" /></td>
+				<td><span th:if= "${#fields.hasErrors('userName')}" th:errors="*{userName}"/></span></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="text" name="userName" th:field="*{password}" /></td>
+				<td><span th:if= "${#fields.hasErrors('password')}" th:errors="*{password}" /></span></td>
+			</tr>
+		</table>
+		<input type="submit" value="submit" />
+	</form>
+</body>
+</html> 
